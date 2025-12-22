@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flask + Nginx</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f4f4;
+            padding: 40px;
+        }
+        .box {
+            background: white;
+            padding: 20px;
+            width: 300px;
+            margin: auto;
+            border-radius: 5px;
+        }
+        input, button {
+            width: 100%;
+            padding: 8px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h2>Simple Python App</h2>
+    <form method="POST">
+        <input type="text" name="name" placeholder="Enter your name" required>
+        <button type="submit">Submit</button>
+    </form>
+
+    {% if name %}
+        <p>Hello, <b>{{ name }}</b> 👋</p>
+    {% endif %}
+</div>
+
+</body>
+</html>
+

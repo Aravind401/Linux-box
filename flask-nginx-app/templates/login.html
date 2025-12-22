@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Linux Box | Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="login-container">
+    <div class="login-card">
+
+        <img src="{{ url_for('static', filename='linux-box.png') }}" 
+             alt="Linux Box" class="logo">
+
+        <h2>Linux Box</h2>
+        <p class="subtitle">Secure Login</p>
+
+        <form method="post">
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
+
+    </div>
+</div>
+
+</body>
+</html>
+
+

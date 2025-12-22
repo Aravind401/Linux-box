@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Linux Box | User Management</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="header">
+    <div class="header-left">
+        <img src="{{ url_for('static', filename='linux-box.png') }}" class="header-logo">
+        <span class="header-title">Linux Box</span>
+    </div>
+    <div class="header-right">
+        <a href="/logout" class="logout-btn">Logout</a>
+    </div>
+</header>
+
+<!-- ===== MAIN CONTENT ===== -->
+<main class="main-content">
+
+    <h2>User Management</h2>
+
+    <!-- Add User Form -->
+    <div class="card">
+        <h3>Add New User</h3>
+        <form action="/add" method="post" class="form-grid">
+            <input name="username" placeholder="Username" required>
+            <input name="dob" type="date" required>
+            <input name="email" placeholder="Email" required>
+            <input name="phone" placeholder="Phone" required>
+            <button type="submit">Add User</button>
+        </form>
+    </div>
+
+    <!-- User List -->
+    <div class="card">
+        <h3>User List</h3>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>DOB</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Actions</th>
+            </tr>
+
+            {% for u in users %}
+            <tr>
+                <td>{{ u[1] }}</td>
+                <td>{{ u[2] }}</td>
+                <td>{{ u[3] }}</td>
+                <td>{{ u[4] }}</td>
+                <td>
+                    <a href="/edit/{{ u[0] }}" class="action edit">Edit</a>
+                    <a href="/delete/{{ u[0] }}" class="action delete">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+    © 2025 Linux Box · Secure User Management System
+</footer>
+
+</body>
+</html>
+
