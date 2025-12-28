@@ -5,7 +5,7 @@ app = Flask(__name__)
 app.secret_key = "secret123"
 
 # MySQL Config
-app.config['MYSQL_HOST'] = 'localhost'
+app.config['MYSQL_HOST'] = 'host.docker.internal'
 app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = 'enter'
 app.config['MYSQL_DB'] = 'userdb'
