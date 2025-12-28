@@ -78,3 +78,7 @@ http://localhost:8080
 
 🔁 Refresh page → response alternates between APP1 & APP2 🎉
 
+
+# remove all images in your machine
+ docker system prune -a
+
